@@ -1,0 +1,17 @@
+<h1> Subreddits </h1>
+<h3> Admin </h3>
+<%= form_for :subreddit , url: admin_subreddits_url do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+  <%= f.submit "Create" %>
+<% end %>
+
+<% @subreddits.each do |subreddit| %>
+  <h2><%= link_to subreddit.title, subreddit_posts_url(subreddit) %> </h2>
+  <%= button_to "Delete", admin_subreddit_url(subreddit), method: :delete %>
+  <img src=<%= subreddit.image %> style="height: 150px" />
+<% end %>

@@ -1,0 +1,11 @@
+<h1> <%= @subreddit.title %> </h1>
+<%= form_for :post , url: subreddit_posts_url(@subreddit) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+  <%= f.submit "Create" %>
+<% end %>
+<% @posts.each do |post| %> 
+  <h3> <%= post.title %> </h3>
+<% end %>

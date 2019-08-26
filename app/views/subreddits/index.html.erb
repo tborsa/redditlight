@@ -1,0 +1,5 @@
+<h1> Subreddits </h1>
+<% @subreddits.each do |subreddit| %>
+  <h2><%= link_to subreddit.title, subreddit_posts_url(subreddit) %> </h2>
+  <img src=<%= subreddit.image %> style="height: 150px" />
+<% end %>
