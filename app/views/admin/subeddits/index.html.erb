@@ -1,0 +1,9 @@
+<h1>Yoooo</h1>
+
+<% @subeddits.each do |subeddit| %>
+  <div>
+    <h2><%= link_to subeddit.name, subeddit_posts_path(subeddit)  %> </h2>
+    <%= button_to "delete", admin_subeddit_url(subeddit), method: :delete %>
+    <img style="max-width: 400px; height: auto" src=<%= subeddit.image %> ></img>
+  </div>
+<% end %>

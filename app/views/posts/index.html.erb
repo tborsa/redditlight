@@ -1,0 +1,15 @@
+<h1> <%= @subeddit.name %> </h1>
+<h2> <%= @subeddit.description %> </h2>
+
+<%= form_for :post , url: subeddit_posts_url(@subeddit) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+  <%= f.submit "Post a post" %>
+<% end %>
+
+<% @subeddit.posts.each do |post| %>
+  <h3> <%= post.name %> </h3>
+  <p> <%= post.content %> </p>
+<% end %>
